@@ -28,3 +28,8 @@ After opening the KNIME, we should add the OpenMS extension to KNIME:
 
 
 I also saved the KNIME softare into the Launcher so that I can reach it without typing ```./knime``` in the source folder everytime.
+
+
+__Extra:__ I also want to install pyOpenMS, python bindings for OpenMS so that I can use pyOpenMS. Simple as: ```pip install pyopenms```. It works with anaconda python 3.6
+
+Fin!
