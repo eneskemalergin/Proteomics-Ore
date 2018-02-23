@@ -9,9 +9,9 @@ wget https://download.knime.org/analytics-platform/linux/knime-latest-linux.gtk.
 # Extract from .tar.gz
 tar -xvzf knime_3.5.2.linux.gtk.x86_64.tar.gz
 # Move to ~/Development folder if not there
-mv -rf knime_3.5.2 ~/Development/
+mv -f knime_3.5.2 ~/Development/
 # Get into the folder downloaded
-cd knime_3.5.2
+cd ~/Development/knime_3.5.2
 # run the knime
 ./knime
 ```
