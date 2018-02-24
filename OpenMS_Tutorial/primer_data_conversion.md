@@ -15,9 +15,17 @@ The good thing about the ```msconvert``` command line tool is that we can use it
 # Will print all options and information
 msconvert --help
 
-# Assuming 
+# Assuming that it will work.
+msconvert instrument_output_raw_data.raw
 
+# However I receieved an angry message:
+"""
+  [ReaderFail] [Reader_Thermo::read()] Thermo RAW reader not implemented: Thermo DLLs only work on Windows
+  Error processing file instrument_output_raw_data.raw
+"""
 ```
+
+I will work on this problem and then come up with the solution (Feb 23, 2018), in the mean time let's go to the next part assuming that we have a ```.mzML``` format file.
 
 
 
@@ -28,4 +36,3 @@ msconvert --help
 
 1. Deutsch, E. W. Mass Spectrometer Output File Format mzML. _Methods in Molecular Biology Proteome Bioinformatics 319–331 (2009)_. doi:10.1007/978-1-60761-444-9_22
 2. ProteoWizard command line tools. Launchpad Available at: https://launchpad.net/ubuntu/xenial/ package/libpwiz-tools. (Accessed: 23rd February 2018)
-3.
