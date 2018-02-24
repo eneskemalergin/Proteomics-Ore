@@ -1,5 +1,7 @@
 # Data Conversion
 
+- __Author:__ Enes Kemal Ergin
+- __Date:__ February 23 2018
 
 OpenMS can handle number of formats however to make things smooth with least error possible OpenMS encourages us to use mzML[1]. mzML is an open format that combined the best aspects of predecessors mzData and mzXML with a collaborative effort of [HUPO-PSI](http://www.psidev.info/) and [SPC](http://tools.proteomecenter.org/software.php) So we want to convert our data format to mzML, if it's not already in that format. For the conversion the OpenMS tutorial suggests using _MSConvert_ which is a tool part of _ProteoWizard_ package. The tutorial also says that due to restrictions from the instrument vendors file format conversion is only possible on Windows, which I am sure there is a way for us open-source users to solve. Here is the solution; in the ubuntu's own package servers they include ProteoWizard package[2]. We can simply install the package with the following command:
 

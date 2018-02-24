@@ -1,6 +1,9 @@
 # OpenMS Installation on Ubuntu 16.04.03 LTS
 
-> February 17 2018
+- __Author:__ Enes Kemal Ergin
+- __Date:__ February 17 2018
+
+>
 
 This installation guide is for setting up the Core C++ Libraries for OpenMS.
 

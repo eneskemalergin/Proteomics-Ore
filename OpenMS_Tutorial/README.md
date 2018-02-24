@@ -8,4 +8,6 @@ This folder contains small notes, tips, tricks, and snippets about the workflow 
   - [OpenMS installation Guide for Ubuntu 16.04](./installation_openMS_ubuntu16.04.md)
   - [KNIME installation for Ubuntu 16.04](./installation_KNIME_OpenMS.md)
 - Primer:
-  - [Data Conversion]()
+  - [Data Conversion](./primer_data_conversion.md)
+  - [Data Visualization with TOPPView](./primer_TOPPView_data_visualization.md)
+  

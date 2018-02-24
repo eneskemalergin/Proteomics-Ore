@@ -1,5 +1,8 @@
 # Installing KNIME
 
+- __Author:__ Enes Kemal Ergin
+- __Date:__ February 18 2018
+
 KNIME is a workflow engine we will use with OpenMS. Here are the installation steps:
 
 ```Bash
