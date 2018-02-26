@@ -10,4 +10,4 @@ This folder contains small notes, tips, tricks, and snippets about the workflow 
 - Primer:
   - [Data Conversion](./primer_data_conversion.md)
   - [Data Visualization with TOPPView](./primer_TOPPView_data_visualization.md)
-  
+  - [How to Use KNIME](./primer_KNIME_usage.md)
