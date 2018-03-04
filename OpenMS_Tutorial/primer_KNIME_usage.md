@@ -84,6 +84,3 @@ For now their state is Red, because we didn't configure the input file. Let's se
 After selecting a file in my case I used a ```.mzML``` file.  ```Input File``` and ```FileInfo``` nodes' statuses turned to yellow from red. But the ```Output File``` still seems to stay red. We need to configure the directory location for the outputs and also don't forget to provide a name with an extension I choose ```outputed.txt```. Now ```Output File```'s state should also be Yellow.
 
 Now it is time to execute our workflow. When you right click on anynode and click execute will do the trick. You can also do shift+F7 keyboard combination too. To inspect the results you can right click ```Output File``` node and select __View: Open the output folder__
-
-
-> To be continued...
