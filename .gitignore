@@ -102,3 +102,4 @@ ENV/
 
 # Data Folders to Ignore
 OpenMS_Tutorial/data/
+Data/

@@ -7,7 +7,7 @@
 ##  - output_figure_path
 ##
 ## Author: Enes Kemal Ergin
-## Date: October 23, 2018
+## Date: October 31, 2018
 
 
 ## TODO: Because there is a mis-labeling that puts 'Yes' to Gene column,
@@ -46,7 +46,7 @@ suppressMessages(library(ggrepel))
 # output2_path <- paste0(unlist(strsplit(inp2_path, '.tsv')), '.png')
 
 # Human data path goes here
-human_data_path <- './PatientsOnly_GOPROCESS_EE.xls'
+human_data_path <- './Data/PatientsOnly_GOPROCESS_EE.xls'
 # Read the tab seperated data with header provided
 human_data <- read.csv(human_data_path, header=TRUE, sep="\t")
 # If there is a miss labeling put them to Highlight
@@ -67,7 +67,7 @@ human_data <- human_data %>%
   mutate(Interested = ifelse(Highlight == 'Yes', TRUE, FALSE))
 
 # PDX data path goes here
-pdx_data_path <- './PDXonly_GOPROCESS_EE.xls'
+pdx_data_path <- './Data/PDXonly_GOPROCESS_EE.xls'
 # Read the tab seperated data with header provided
 pdx_data <- read.csv(pdx_data_path, header=TRUE, sep="\t")
 # If there is a miss labeling put them to Highlight
@@ -88,11 +88,11 @@ pdx_data <- pdx_data %>%
   mutate(Interested = ifelse(Highlight == 'Yes', TRUE, FALSE))
 
 human_plot <- human_data %>%
-  ggplot(aes(x=Enrichment, y=FDR.q.value, size=GeneCount, label=Description)) +
-  geom_point(alpha=0.7, aes(color=Interested)) +
+  ggplot(aes(x=Enrichment, y=FDR.q.value, label=Description)) +
+  geom_point(alpha=0.7, aes(color=Interested, size=GeneCount)) +
   scale_color_manual(values=c('#C0C0C0', '#E4001B')) +
   geom_text_repel(data = subset(human_data, Interested),
-                  size = 5,
+                  size = 8,
                   segment.size = 1,
                   segment.colour = 'grey50',
                   box.padding = unit(0.35, "lines"),
@@ -103,28 +103,30 @@ human_plot <- human_data %>%
        x='Enrichment',
        y='Log FDR q-value',
        size= 'Number of Genes',
-       color= 'GO Term of Interest')
+       color= 'GO Term of Interest') +
+  scale_size(range = c(5, 12))
 
 pdx_plot <- pdx_data %>%
   ggplot(aes(x=Enrichment, y=FDR.q.value, size=GeneCount, label=Description)) +
   geom_text_repel(data = subset(pdx_data, Interested),
-                  size = 5,
+                  size = 8,
                   segment.size = 1,
                   segment.colour = 'grey50',
                   box.padding = unit(0.35, "lines"),
                   point.padding = unit(0.3, "lines"),
                   nudge_x = 10 - subset(pdx_data, Interested)$Interested) +
-  geom_point(alpha=0.7, aes(color=Interested)) +
+  geom_point(alpha=0.7, aes(color=Interested, size=GeneCount)) +
   scale_color_manual(values=c('#C0C0C0', '#E4001B')) +
   theme_cowplot() +
   labs(title='GOEnrichment Summary - PDX',
        x='Enrichment',
        y='Log FDR q-value',
        size= 'Number of Genes',
-       color= 'GO Term of Interest')
+       color= 'GO Term of Interest') +
+  scale_size(range = c(5, 12))
 
 output_figure_path <- './GOEnrichment_Compare_patientPDX.png'
 
 save_plot(output_figure_path,
           plot_grid(human_plot, pdx_plot),
-          base_width = 30, base_height = 15)
+          base_height = 15, base_aspect_ratio = 3)
